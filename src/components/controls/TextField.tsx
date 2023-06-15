@@ -11,7 +11,7 @@ export interface TextFieldProps extends BaseTextFieldProps {
   pattern?: string;
   multiline?: boolean;
   helpText?: string;
-  control?: Control<{}, any>;
+  control?: Control<any>;
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
   onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
   onFocus?: (event: FocusEvent<HTMLInputElement>) => void;

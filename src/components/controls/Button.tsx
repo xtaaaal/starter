@@ -16,7 +16,6 @@ export enum ColorScheme {
 }
 
 export interface ButtonProps extends React.ComponentPropsWithRef<'button'> {
-  label: string;
   variant?: 'primary' | 'outlined' | 'link';
   color?: string;
   disabled?: boolean;
@@ -24,7 +23,7 @@ export interface ButtonProps extends React.ComponentPropsWithRef<'button'> {
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ label, variant, disabled, color = ColorScheme.navy, ..._props }, ref) => {
+  ({ children, variant, disabled, color = ColorScheme.navy, ..._props }, ref) => {
     _props.type = _props.type || 'button';
     return (
       <button
@@ -37,7 +36,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={onClick}
         disabled={disabled}
       >
-        <span>{label}</span>
+        <span>{children}
+}</span>
       </button>
     );
 

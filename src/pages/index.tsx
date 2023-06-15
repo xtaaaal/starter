@@ -5,7 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { FormInputs } from '@/types/form';
 
 const Home: NextPage = () => {
-  const defaultValues = {};
+  const defaultValues = { mobile: '', name: '' };
   const { handleSubmit, reset, setValue, control } = useForm({ defaultValues });
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log(data);
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
               multiline
               control={control}
             />
-            <Button type="submit" label="Submit" />
+            <Button type="submit">Submit</Button>
           </form>
         </div>
       </div>

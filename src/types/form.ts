@@ -23,6 +23,6 @@ export interface TextFieldProps<T = string, V = T> extends FormFieldProps<T, V>,
 }
 
 export type FormInputs = {
-    mobile?: number,
+    mobile?: number | string,
     name?: string,
   };
