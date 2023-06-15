@@ -23,7 +23,10 @@ export interface ButtonProps extends React.ComponentPropsWithRef<'button'> {
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, variant, disabled, color = ColorScheme.navy, ..._props }, ref) => {
+  (
+    { children, variant, disabled, color = ColorScheme.navy, ..._props },
+    ref
+  ) => {
     _props.type = _props.type || 'button';
     return (
       <button
@@ -36,8 +39,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={onClick}
         disabled={disabled}
       >
-        <span>{children}
-}</span>
+        <span>{children}</span>
       </button>
     );
 

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { TextField, Button } from '@/components/controls';
+import { FbTextField, TextField, Button } from '@/components/controls';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { FormInputs } from '@/types/form';
 
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div className="flex flex-col p-4 bg-white rounded-lg">
+        <div className="flex flex-col p-4 m-6 bg-white rounded-lg border ">
           <form onSubmit={handleSubmit(onSubmit)}>
             <TextField
               name="mobile"
