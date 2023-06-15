@@ -21,3 +21,8 @@ export interface TextFieldProps<T = string, V = T> extends FormFieldProps<T, V>,
 
     type?: 'color' | 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'tel' | 'text' | 'time' | 'url' | 'week' | string & {};
 }
+
+export type FormInputs = {
+    mobile?: number,
+    name?: string,
+  };
