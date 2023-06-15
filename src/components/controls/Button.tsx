@@ -1,22 +1,10 @@
 import { forwardRef } from 'react';
 import classNames from 'classnames';
-export enum ColorScheme {
-  white = 'white',
-  black = 'black',
-  gray = 'gray',
-  darkgray = 'darkgray',
-  lightgray = 'lightgray',
-  enabled = 'enabled',
-  outline = 'outline',
-  disabled = 'disabled-bg',
-  lightblue = 'lightblue',
-  navy = 'navy',
-  pink = 'pink',
-  blue = 'blue',
-}
+import { Button as FbButton } from 'flowbite-react';
+import { ColorScheme } from '@/types/form';
 
 export interface ButtonProps extends React.ComponentPropsWithRef<'button'> {
-  variant?: 'primary' | 'outlined' | 'link';
+  variant?: 'primary' | 'outline' | 'link';
   color?: string;
   disabled?: boolean;
   onClick?: (e: React.UIEvent) => any;
@@ -29,18 +17,15 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     _props.type = _props.type || 'button';
     return (
-      <button
+      <FbButton
         {..._props}
-        className={`grow px-4 py-2 bg-${color} rounded-lg border border-${color} disabled:opacity-100 disabled:cursor-default transition ${
-          color === ColorScheme.navy
-            ? `text-${ColorScheme.lightblue}`
-            : 'text-black'
-        }`}
+        color={variant === 'link' ? 'white' : color}
         onClick={onClick}
         disabled={disabled}
+        outline={variant === 'outline'}
       >
-        <span>{children}</span>
-      </button>
+        {children}
+      </FbButton>
     );
 
     function onClick(e: React.UIEvent) {

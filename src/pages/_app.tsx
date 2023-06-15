@@ -3,18 +3,22 @@ import React, { useEffect } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import '@/styles/globals.css';
 import { ThemeProvider } from 'next-themes';
+import { customTheme } from '@/util/cssUtil';
+
+import { Flowbite } from 'flowbite-react';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     //NOTE: Disable theme for now
     // <ThemeProvider attribute="class">
-    //   <PageLayout>
-    //     <Component {...pageProps} />
-    //   </PageLayout>
-    // </ThemeProvider>
+
     <PageLayout>
-      <Component {...pageProps} />
+      <Flowbite theme={{ theme: customTheme }}>
+        <Component {...pageProps} />
+      </Flowbite>
     </PageLayout>
+
+    // </ThemeProvider>
   );
 };
 

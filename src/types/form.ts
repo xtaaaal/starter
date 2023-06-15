@@ -3,6 +3,22 @@ export interface Stringifiable {
     toString(): string;
     [Symbol.toPrimitive](): string;
 }
+export enum ColorScheme {
+    white = 'white',
+    black = 'black',
+    gray = 'gray',
+    darkgray = 'darkgray',
+    lightgray = 'lightgray',
+    enabled = 'enabled',
+    outline = 'outline',
+    disabled = 'disabled-bg',
+    lightblue = 'lightblue',
+    navy = 'navy',
+    pink = 'pink',
+    blue = 'blue',
+  }
+  
+
 export interface FormFieldProps<T = any, V = T> {
     name: string;
     label?: string;
@@ -25,4 +41,4 @@ export interface TextFieldProps<T = string, V = T> extends FormFieldProps<T, V>,
 export type FormInputs = {
     mobile?: number | string,
     name?: string,
-  };
+};
